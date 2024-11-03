@@ -1,3 +1,18 @@
 # Add patterns of files dvc should ignore, which could improve
 # the performance. Learn more at
 # https://dvc.org/doc/user-guide/dvcignore
+
+
+# Ignorar archivos de caché locales (si tienes uno personalizado)
+/.local_cache/
+
+# Ignorar carpetas de logs
+logs/
+
+# Ignorar archivos temporales o grandes que no deseas que DVC rastree
+*.tmp
+*.log
+
+# Ignorar archivos de configuración o resultados intermedios
+.env
+*.bak
