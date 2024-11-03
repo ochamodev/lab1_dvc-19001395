@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  preprocess_data:
+    cmd: python .\src\preprocess.py data/data.csv output/cleaned_data.csv params.yaml
+    deps:
+    - path: .\data\data.csv
+      hash: md5
+      md5: 801f8030dad1df22a53edfdbfa4e80f0
+      size: 29981
+    - path: .\params.yaml
+      hash: md5
+      md5: 1775c0e5c920c3a34381a678503cffdf
+      size: 420
+    - path: .\src\preprocess.py
+      hash: md5
+      md5: b69cab878c4578610e10d58a36a7ef91
+      size: 1036
+    outs:
+    - path: output/cleaned_data.csv
+      hash: md5
+      md5: 38e283839d605e020f5532599896e3f6
+      size: 12063
