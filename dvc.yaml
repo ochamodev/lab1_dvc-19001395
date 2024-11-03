@@ -1,9 +1,10 @@
 stages:
   preprocess_data:
-    cmd: python .\src\preprocess.py data/data.csv output/cleaned_data.csv params.yaml
+    cmd: python src/preprocess.py data/data.csv output/train_data.csv output/test_data.csv params.yaml
     deps:
-    - .\data\data.csv
-    - .\params.yaml
-    - .\src\preprocess.py
+      - src/preprocess.py
+      - data/data.csv
+      - params.yaml
     outs:
-    - output/cleaned_data.csv
+      - output/train_data.csv
+      - output/test_data.csv
