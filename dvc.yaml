@@ -1,10 +1,21 @@
 stages:
   preprocess_data:
-    cmd: python src/preprocess.py data/data.csv output/train_data.csv output/test_data.csv params.yaml
+    cmd: python src/preprocess.py data/data.csv output/train_data.csv output/test_data.csv
+      params.yaml
     deps:
-      - src/preprocess.py
-      - data/data.csv
-      - params.yaml
+    - src/preprocess.py
+    - data/data.csv
+    - params.yaml
     outs:
-      - output/train_data.csv
-      - output/test_data.csv
+    - output/train_data.csv
+    - output/test_data.csv
+  train_models:
+    cmd: python src/train.py output/train_data.csv output/test_data.csv params.yaml
+      models/best_model.joblib
+    deps:
+    - output/test_data.csv
+    - output/train_data.csv
+    - params.yaml
+    - src/train.py
+    outs:
+    - models/best_model.joblib
