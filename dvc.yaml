@@ -19,3 +19,13 @@ stages:
     - src/train.py
     outs:
     - models/best_model.joblib
+  optimize_models:
+    cmd: python src/optimization_and_training.py output/train_data.csv output/test_data.csv
+      params.yaml models/best_optimized_model.joblib
+    deps:
+    - output/test_data.csv
+    - output/train_data.csv
+    - params.yaml
+    - src/optimization_and_training.py
+    outs:
+    - models/best_optimized_model.joblib
