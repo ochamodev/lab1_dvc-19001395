@@ -18,3 +18,15 @@ models:
     type: "GradientBoostingRegressor"
     n_estimators: 100
     learning_rate: 0.1
+
+models_with_optimization_and_training:
+  linear_regression:
+    alpha: [0.1, 1.0, 10.0]
+  random_forest:
+    n_estimators: [50, 100, 200]
+    max_depth: [3, 5, 10]
+    random_state: 42
+  gradient_boost:
+    n_estimators: [50, 100, 200]
+    learning_rate: [0.01, 0.1, 0.2]
+    random_state: 42
