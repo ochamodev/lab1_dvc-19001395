@@ -25,3 +25,28 @@ stages:
       hash: md5
       md5: 102b3d9754ee336c54f044974e433f50
       size: 9660
+  train_models:
+    cmd: python src/train.py output/train_data.csv output/test_data.csv params.yaml
+      models/best_model.joblib
+    deps:
+    - path: output/test_data.csv
+      hash: md5
+      md5: 0dc9d3ebb6d4a3265178991f956a862b
+      size: 2450
+    - path: output/train_data.csv
+      hash: md5
+      md5: 102b3d9754ee336c54f044974e433f50
+      size: 9660
+    - path: params.yaml
+      hash: md5
+      md5: 1775c0e5c920c3a34381a678503cffdf
+      size: 420
+    - path: src/train.py
+      hash: md5
+      md5: ac189d6008b616d58d849d8c6c0ed0d8
+      size: 2661
+    outs:
+    - path: models/best_model.joblib
+      hash: md5
+      md5: 57920d9db2b1a0ba5c9e9ee6728cd064
+      size: 960
