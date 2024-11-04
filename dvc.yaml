@@ -29,3 +29,7 @@ stages:
     - src/optimization_and_training.py
     outs:
     - models/best_optimized_model.joblib
+  interpret_results:
+    cmd: output/test_data.csv params.yaml models/best_optimized_model.joblib interpretation/results.csv
+    deps:
+    - src/result_interpretation.py
