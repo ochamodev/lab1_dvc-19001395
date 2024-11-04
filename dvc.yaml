@@ -30,6 +30,12 @@ stages:
     outs:
     - models/best_optimized_model.joblib
   interpret_results:
-    cmd: output/test_data.csv params.yaml models/best_optimized_model.joblib interpretation/results.csv
+    cmd: python src/result_interpretation.py output/test_data.csv params.yaml models/best_optimized_model.joblib
+      interpretation/results.csv
     deps:
+    - models/best_optimized_model.joblib
+    - output/test_data.csv
+    - params.yaml
     - src/result_interpretation.py
+    outs:
+    - interpretation/results.csv

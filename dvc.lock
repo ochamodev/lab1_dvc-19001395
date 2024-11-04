@@ -75,3 +75,28 @@ stages:
       hash: md5
       md5: 57920d9db2b1a0ba5c9e9ee6728cd064
       size: 960
+  interpret_results:
+    cmd: python src/result_interpretation.py output/test_data.csv params.yaml models/best_optimized_model.joblib
+      interpretation/results.csv
+    deps:
+    - path: models/best_optimized_model.joblib
+      hash: md5
+      md5: 57920d9db2b1a0ba5c9e9ee6728cd064
+      size: 960
+    - path: output/test_data.csv
+      hash: md5
+      md5: 0dc9d3ebb6d4a3265178991f956a862b
+      size: 2450
+    - path: params.yaml
+      hash: md5
+      md5: 2336cb4f3204ee90d46fdb194e5e694e
+      size: 724
+    - path: src/result_interpretation.py
+      hash: md5
+      md5: c05b0e0f8901aa0608579b4630869ec9
+      size: 2877
+    outs:
+    - path: interpretation/results.csv
+      hash: md5
+      md5: 7d995959ab07f5ecbb828784266a1e39
+      size: 203
